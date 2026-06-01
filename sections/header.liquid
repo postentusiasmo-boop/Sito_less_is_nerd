@@ -1,0 +1,12 @@
+<header class="site-header">
+  {% if settings.announcement != blank %}<div class="announcement">{{ settings.announcement }}</div>{% endif %}
+  <div class="header-inner">
+    <a class="brand" href="{{ routes.root_url }}" aria-label="{{ shop.name }}">{{ section.settings.brand_name | default: shop.name }}</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="PrimaryNav"><span></span><span></span><span></span><span class="visually-hidden">{{ 'general.menu' | t }}</span></button>
+    <nav id="PrimaryNav" class="primary-nav" aria-label="Primary">
+      {% for link in linklists.main-menu.links %}<a href="{{ link.url }}">{{ link.title }}</a>{% else %}<a href="{{ routes.all_products_collection_url }}">Shop</a><a href="/pages/about">About</a><a href="/pages/contact">Contact</a>{% endfor %}
+    </nav>
+    <a class="cart-link" href="{{ routes.cart_url }}">{{ 'general.cart' | t }} <span class="cart-count">{{ cart.item_count }}</span></a>
+  </div>
+</header>
+{% schema %}{"name":"Header","settings":[{"type":"text","id":"brand_name","label":"Brand name","default":"Less is nerd"}]}{% endschema %}
