@@ -9,11 +9,25 @@
 
   <div class="hero-content">
     <img class="hero-logo" src="{{ 'logo-white.svg' | asset_url }}" alt="Less is nerd" width="486" height="77">
-    {% if section.settings.eyebrow != blank %}<p class="eyebrow">{{ section.settings.eyebrow }}</p>{% endif %}
     <h1>{{ section.settings.heading }}</h1>
     <p>{{ section.settings.text }}</p>
-    {% if section.settings.button_label != blank %}<a class="button" href="{{ section.settings.button_link }}">{{ section.settings.button_label }}</a>{% endif %}
+    {% if section.settings.button_label != blank %}
+      <a class="button" href="{{ section.settings.button_link }}">{{ section.settings.button_label }}</a>
+    {% endif %}
   </div>
 </section>
 
-{% schema %}{"name":"Hero","settings":[{"type":"image_picker","id":"image","label":"Image"},{"type":"text","id":"eyebrow","label":"Eyebrow","default":"Less is nerd"},{"type":"text","id":"heading","label":"Heading","default":"The end of loud nerd merch"},{"type":"textarea","id":"text","label":"Text","default":"Oggetti essenziali per chi ama mondi, codici e storie condivise, ma non vuole indossare il rumore."},{"type":"text","id":"button_label","label":"Button label","default":"Esplora il manifesto"},{"type":"url","id":"button_link","label":"Button link"}],"presets":[{"name":"Hero"}]}{% endschema %}
+{% schema %}
+{
+  "name": "Hero",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Image" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Quiet signals." },
+    { "type": "textarea", "id": "text", "label": "Text", "default": "Oggetti essenziali. Riferimenti nascosti in piena vista." },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Shop" },
+    { "type": "url", "id": "button_link", "label": "Button link" }
+  ],
+  "presets": [{ "name": "Hero" }]
+}
+{% endschema %}
