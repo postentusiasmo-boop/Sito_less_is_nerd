@@ -2,11 +2,36 @@
   {
     "name": "Theme settings",
     "settings": [
-      { "type": "color", "id": "color_background", "label": "Background", "default": "#f7f5ef" },
-      { "type": "color", "id": "color_text", "label": "Text", "default": "#111111" },
-      { "type": "color", "id": "color_accent", "label": "Accent", "default": "#88ad90" },
-      { "type": "color", "id": "color_surface", "label": "Surface", "default": "#fffdf8" },
-      { "type": "text", "id": "announcement", "label": "Announcement", "default": "Nerd references, quiet objects." }
+      {
+        "type": "color",
+        "id": "color_background",
+        "label": "Background",
+        "default": "#f4f4f1"
+      },
+      {
+        "type": "color",
+        "id": "color_text",
+        "label": "Text",
+        "default": "#111111"
+      },
+      {
+        "type": "color",
+        "id": "color_accent",
+        "label": "Accent",
+        "default": "#88ad90"
+      },
+      {
+        "type": "color",
+        "id": "color_surface",
+        "label": "Surface",
+        "default": "#ffffff"
+      },
+      {
+        "type": "text",
+        "id": "announcement_text",
+        "label": "Announcement text",
+        "default": "Quiet objects for coded taste."
+      }
     ]
   }
 ]
