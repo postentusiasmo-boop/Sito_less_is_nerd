@@ -4,17 +4,40 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="{{ settings.color_accent }}">
-    <title>{{ page_title }}{%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}</title>
-    {% if page_description %}<meta name="description" content="{{ page_description | escape }}">{% endif %}
+
+    <title>
+      {{ page_title }}
+      {%- if current_tags %} &ndash; tag "{{ current_tags | join: ', ' }}"{% endif -%}
+      {%- if current_page != 1 %} &ndash; Pagina {{ current_page }}{% endif -%}
+      {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+    </title>
+
+    {% if page_description %}
+      <meta name="description" content="{{ page_description | escape }}">
+    {% endif %}
+
     {{ content_for_header }}
-    <style>:root{--color-background:{{ settings.color_background }};--color-text:{{ settings.color_text }};--color-accent:{{ settings.color_accent }};--color-surface:{{ settings.color_surface }};}</style>
+
+    <style>
+      :root {
+        --color-background: {{ settings.color_background }};
+        --color-text: {{ settings.color_text }};
+        --color-accent: {{ settings.color_accent }};
+        --color-surface: {{ settings.color_surface }};
+      }
+    </style>
     {{ 'theme.css' | asset_url | stylesheet_tag }}
     <script src="{{ 'theme.js' | asset_url }}" defer></script>
   </head>
+
   <body class="template-{{ template.name }}">
-    <a class="skip-link" href="#MainContent">Skip to content</a>
+    <a class="skip-link" href="#MainContent">Vai al contenuto</a>
     {% section 'header' %}
-    <main id="MainContent" role="main">{{ content_for_layout }}</main>
+
+    <main id="MainContent" role="main">
+      {{ content_for_layout }}
+    </main>
+
     {% section 'footer' %}
   </body>
 </html>
