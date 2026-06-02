@@ -1,0 +1,21 @@
+<section class="manifesto-section">
+  <div class="manifesto-inner">
+    <p class="eyebrow">{{ section.settings.kicker }}</p>
+    <h2>{{ section.settings.heading }}</h2>
+    <p>{{ section.settings.text }}</p>
+    <div class="manifesto-note">{{ section.settings.note }}</div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Manifesto",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "Manifesto" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Non vendiamo gadget. Disegniamo segnali." },
+    { "type": "textarea", "id": "text", "label": "Text", "default": "Less is nerd nasce da una piccola ribellione: l'idea che la cultura nerd non debba per forza diventare plastica, caos visivo o ironia urlata." },
+    { "type": "text", "id": "note", "label": "Note", "default": "If you know, you know. If you don't, it still looks good." }
+  ],
+  "presets": [{ "name": "Manifesto" }]
+}
+{% endschema %}
