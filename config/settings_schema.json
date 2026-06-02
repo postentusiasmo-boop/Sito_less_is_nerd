@@ -28,9 +28,9 @@
       },
       {
         "type": "text",
-        "id": "announcement_text",
-        "label": "Announcement text",
-        "default": "Quiet objects for coded taste."
+        "id": "announcement",
+        "label": "Announcement",
+        "default": "Oggetti silenziosi per gusti molto specifici."
       }
     ]
   }
