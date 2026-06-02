@@ -4,7 +4,7 @@ Tema Shopify Online Store 2.0 creato per Less is nerd.
 
 ## Cosa contiene
 
-- Homepage personalizzabile con hero minimal nerd, prodotti in evidenza, testo brand e newsletter.
+- Homepage personalizzabile con hero editoriale, manifesto, prodotti in evidenza, principi brand e newsletter.
 - Template per prodotto, collezione, carrello, pagina generica e 404.
 - Header e footer collegati ai menu Shopify.
 - Stile responsive per desktop e mobile.
