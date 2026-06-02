@@ -1,5 +1,22 @@
 <footer class="site-footer">
-  <div class="footer-grid"><div><h2>{{ section.settings.brand_name }}</h2><p>{{ section.settings.text }}</p></div><nav aria-label="Footer">{% for link in linklists.footer.links %}<a href="{{ link.url }}">{{ link.title }}</a>{% else %}<a href="{{ routes.all_products_collection_url }}">Shop</a><a href="/policies/shipping-policy">Spedizioni</a><a href="/policies/refund-policy">Resi</a>{% endfor %}</nav></div>
+  <div class="footer-grid">
+    <div>
+      <img class="footer-logo" src="{{ 'logo-white.svg' | asset_url }}" alt="{{ section.settings.brand_name }}" width="243" height="38">
+      <p>{{ section.settings.text }}</p>
+    </div>
+
+    <nav aria-label="Footer">
+      {% for link in linklists.footer.links %}
+        <a href="{{ link.url }}">{{ link.title }}</a>
+      {% else %}
+        <a href="{{ routes.all_products_collection_url }}">Shop</a>
+        <a href="/policies/shipping-policy">Spedizioni</a>
+        <a href="/policies/refund-policy">Resi</a>
+      {% endfor %}
+    </nav>
+  </div>
+
   <div class="footer-bottom"><span>&copy; {{ 'now' | date: '%Y' }} {{ section.settings.brand_name }}</span><span>Powered by Shopify</span></div>
 </footer>
-{% schema %}{"name":"Footer","settings":[{"type":"text","id":"brand_name","label":"Brand name","default":"Less is nerd"},{"type":"textarea","id":"text","label":"Footer text","default":"Grafiche minimal per persone con riferimenti molto specifici."}]}{% endschema %}
+
+{% schema %}{"name":"Footer","settings":[{"type":"text","id":"brand_name","label":"Brand name","default":"Less is nerd"},{"type":"textarea","id":"text","label":"Footer text","default":"Oggetti eleganti per persone con riferimenti molto specifici."}]}{% endschema %}
