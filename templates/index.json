@@ -14,9 +14,9 @@
       "type": "manifesto",
       "settings": {
         "kicker": "Manifesto",
-        "heading": "Non urlare. Fatti riconoscere.",
-        "text": "Un segno, una memoria, un codice privato. Se lo sai, basta.",
-        "note": "Non gadget. Segnali."
+        "heading": "Tutto il resto può sparire.",
+        "text": "Resta il riferimento. Resta la forma.",
+        "note": "Il superfluo fuori campo."
       }
     },
     "collections": {
@@ -31,31 +31,11 @@
             "text": "Icone, poteri e simboli ridotti all'essenziale.",
             "link": "/collections/supereroi"
           }
-        },
-        "console": {
-          "type": "collection",
-          "settings": {
-            "label": "02",
-            "title": "Console",
-            "text": "Memorie da salotto, senza nostalgia urlata.",
-            "link": "/collections/console"
-          }
-        },
-        "spazio": {
-          "type": "collection",
-          "settings": {
-            "label": "03",
-            "title": "Spazio",
-            "text": "Rotte, pianeti e coordinate per chi sa guardare.",
-            "link": "/collections/spazio"
-          }
         }
       },
-      "block_order": ["superheroes", "console", "spazio"],
+      "block_order": ["superheroes"],
       "settings": {
-        "heading": "Collezioni",
-        "link_label": "Tutte le collezioni",
-        "link_url": "/collections"
+        "heading": "Collezione"
       }
     },
     "featured": {
