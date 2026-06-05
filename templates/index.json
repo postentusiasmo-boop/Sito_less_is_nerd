@@ -22,20 +22,20 @@
     "collections": {
       "type": "collection-list",
       "blocks": {
-        "superheroes": {
+        "clark": {
           "type": "collection",
           "settings": {
             "label": "01",
-            "collection": "supereroi",
-            "title": "Supereroi",
-            "text": "Icone, poteri e simboli ridotti all'essenziale.",
-            "link": "/collections/supereroi"
+            "collection": "clark",
+            "title": "Clark",
+            "text": "Identità quotidiane. Segni quasi invisibili.",
+            "link": "/collections/clark"
           }
         }
       },
-      "block_order": ["superheroes"],
+      "block_order": ["clark"],
       "settings": {
-        "heading": "Collezione"
+        "heading": "Piece"
       }
     },
     "featured": {
