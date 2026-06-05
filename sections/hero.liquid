@@ -1,4 +1,4 @@
-<section class="hero">
+<section class="hero hero-photo-test">
   <div class="hero-media">
     {% if section.settings.image != blank %}
       {{ section.settings.image | image_url: width: 1800 | image_tag: loading: 'eager', sizes: '100vw' }}
@@ -12,6 +12,49 @@
     <p>{{ section.settings.text }}</p>
   </div>
 </section>
+
+<style>
+  .hero-photo-test {
+    align-items: start;
+  }
+
+  .hero-photo-test::after {
+    background: linear-gradient(90deg, rgba(255,255,255,.32) 0%, rgba(255,255,255,.16) 34%, rgba(255,255,255,0) 66%);
+  }
+
+  .hero-photo-test .hero-media img {
+    object-position: center;
+  }
+
+  .hero-photo-test .hero-content {
+    padding-top: clamp(86px, 12vh, 132px);
+  }
+
+  .hero-photo-test h1 {
+    max-width: 640px;
+    text-shadow: 0 1px 22px rgba(255,255,255,.78);
+  }
+
+  .hero-photo-test p {
+    color: #333;
+    text-shadow: 0 1px 14px rgba(255,255,255,.7);
+  }
+
+  @media (max-width: 620px) {
+    .hero-photo-test {
+      align-items: end;
+    }
+
+    .hero-photo-test::after {
+      background: linear-gradient(0deg, rgba(255,255,255,.9) 0%, rgba(255,255,255,.62) 38%, rgba(255,255,255,.08) 76%);
+    }
+
+    .hero-photo-test .hero-content {
+      padding-top: 0;
+      padding-bottom: 54px;
+    }
+  }
+</style>
 
 {% schema %}
 {
