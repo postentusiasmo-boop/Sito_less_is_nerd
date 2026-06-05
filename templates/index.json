@@ -3,11 +3,8 @@
     "hero": {
       "type": "hero",
       "settings": {
-        "eyebrow": "",
         "heading": "Nerd, con misura.",
-        "text": "Riferimenti precisi, forme pulite, nessun rumore.",
-        "button_label": "Scopri",
-        "button_link": "shopify://collections/clark"
+        "text": "Riferimenti precisi, forme pulite, nessun rumore."
       }
     },
     "manifesto": {
