@@ -1,7 +1,7 @@
-<section class="hero hero-photo-test">
+<section class="hero hero-editorial">
   <div class="hero-media">
     {% if section.settings.image != blank %}
-      {{ section.settings.image | image_url: width: 1800 | image_tag: loading: 'eager', sizes: '100vw' }}
+      {{ section.settings.image | image_url: width: 2000 | image_tag: loading: 'eager', sizes: '100vw' }}
     {% else %}
       <div class="hero-placeholder"></div>
     {% endif %}
@@ -14,44 +14,77 @@
 </section>
 
 <style>
-  .hero-photo-test {
-    align-items: start;
+  .hero-editorial {
+    display: block;
+    min-height: 0;
+    overflow: visible;
+    background: #fff;
   }
 
-  .hero-photo-test::after {
-    background: linear-gradient(90deg, rgba(255,255,255,.32) 0%, rgba(255,255,255,.16) 34%, rgba(255,255,255,0) 66%);
+  .hero-editorial::after {
+    content: none;
   }
 
-  .hero-photo-test .hero-media img {
-    object-position: center;
+  .hero-editorial .hero-media {
+    position: relative;
+    inset: auto;
+    z-index: auto;
+    width: 100%;
+    background: #f7f7f5;
   }
 
-  .hero-photo-test .hero-content {
-    padding-top: clamp(86px, 12vh, 132px);
+  .hero-editorial .hero-media img,
+  .hero-editorial .hero-placeholder {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    object-fit: contain;
   }
 
-  .hero-photo-test h1 {
-    max-width: 640px;
-    text-shadow: 0 1px 22px rgba(255,255,255,.78);
+  .hero-editorial .hero-placeholder {
+    aspect-ratio: 16 / 9;
   }
 
-  .hero-photo-test p {
-    color: #333;
-    text-shadow: 0 1px 14px rgba(255,255,255,.7);
+  .hero-editorial .hero-content {
+    width: min(var(--max-width), calc(100% - 48px));
+    margin: 0 auto;
+    padding: clamp(64px, 8vw, 112px) 0 clamp(72px, 9vw, 128px);
+    text-align: center;
+  }
+
+  .hero-editorial h1 {
+    max-width: 920px;
+    margin: 0 auto;
+    font-size: clamp(48px, 9vw, 112px);
+    text-shadow: none;
+  }
+
+  .hero-editorial p {
+    max-width: 520px;
+    margin: 24px auto 0;
+    color: #555;
+    text-shadow: none;
   }
 
   @media (max-width: 620px) {
-    .hero-photo-test {
-      align-items: end;
+    .hero-editorial .hero-media img {
+      width: 100%;
+      height: auto;
     }
 
-    .hero-photo-test::after {
-      background: linear-gradient(0deg, rgba(255,255,255,.9) 0%, rgba(255,255,255,.62) 38%, rgba(255,255,255,.08) 76%);
+    .hero-editorial .hero-content {
+      width: min(100% - 32px, 760px);
+      padding: 52px 0 72px;
+      text-align: left;
     }
 
-    .hero-photo-test .hero-content {
-      padding-top: 0;
-      padding-bottom: 54px;
+    .hero-editorial h1 {
+      font-size: clamp(44px, 13vw, 68px);
+    }
+
+    .hero-editorial p {
+      margin-left: 0;
+      margin-right: 0;
     }
   }
 </style>
