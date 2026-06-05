@@ -4,10 +4,10 @@
       "type": "hero",
       "settings": {
         "eyebrow": "",
-        "heading": "Segnali discreti.",
-        "text": "Oggetti essenziali. Riferimenti nascosti in piena vista.",
+        "heading": "Nerd, con misura.",
+        "text": "Riferimenti precisi, forme pulite, nessun rumore.",
         "button_label": "Scopri",
-        "button_link": "shopify://collections/all"
+        "button_link": "shopify://collections/clark"
       }
     },
     "manifesto": {
@@ -17,6 +17,39 @@
         "heading": "Tutto il resto può sparire.",
         "text": "Resta il riferimento. Resta la forma.",
         "note": "Il superfluo fuori campo."
+      }
+    },
+    "values": {
+      "type": "minimal-values",
+      "blocks": {
+        "one": {
+          "type": "value",
+          "settings": {
+            "label": "01",
+            "heading": "Sottile",
+            "text": "Il riferimento c'è, ma non deve spiegarsi."
+          }
+        },
+        "two": {
+          "type": "value",
+          "settings": {
+            "label": "02",
+            "heading": "Pulito",
+            "text": "Prima viene la forma. Poi il codice."
+          }
+        },
+        "three": {
+          "type": "value",
+          "settings": {
+            "label": "03",
+            "heading": "Portabile",
+            "text": "Nerd senza costume. Elegante senza posa."
+          }
+        }
+      },
+      "block_order": ["one", "two", "three"],
+      "settings": {
+        "heading": "Codice"
       }
     },
     "collections": {
@@ -41,9 +74,9 @@
     "featured": {
       "type": "featured-products",
       "settings": {
-        "heading": "Oggetti",
-        "collection": "all",
-        "products_to_show": 4
+        "heading": "",
+        "collection": "clark",
+        "products_to_show": 8
       }
     },
     "story": {
@@ -55,39 +88,6 @@
         "button_link": "shopify://pages/contact"
       }
     },
-    "values": {
-      "type": "minimal-values",
-      "blocks": {
-        "one": {
-          "type": "value",
-          "settings": {
-            "label": "01",
-            "heading": "Sottrai",
-            "text": "Niente rumore."
-          }
-        },
-        "two": {
-          "type": "value",
-          "settings": {
-            "label": "02",
-            "heading": "Codifica",
-            "text": "Un dettaglio basta."
-          }
-        },
-        "three": {
-          "type": "value",
-          "settings": {
-            "label": "03",
-            "heading": "Forma",
-            "text": "Prima bello. Poi nerd."
-          }
-        }
-      },
-      "block_order": ["one", "two", "three"],
-      "settings": {
-        "heading": "Regole"
-      }
-    },
     "newsletter": {
       "type": "newsletter",
       "settings": {
@@ -96,5 +96,5 @@
       }
     }
   },
-  "order": ["hero", "manifesto", "collections", "featured", "story", "values", "newsletter"]
+  "order": ["hero", "manifesto", "values", "collections", "featured", "story", "newsletter"]
 }
