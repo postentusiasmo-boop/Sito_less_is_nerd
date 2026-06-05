@@ -1,8 +1,18 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
       "type": "hero",
       "settings": {
+        "image": "shopify://shop_images/less-is-nerd-hero-beach-preview-v2.webp",
         "heading": "Siamo ciò che riconosciamo.",
         "text": "Oggetti essenziali per chi si ritrova nei dettagli."
       }
@@ -44,7 +54,11 @@
           }
         }
       },
-      "block_order": ["one", "two", "three"],
+      "block_order": [
+        "one",
+        "two",
+        "three"
+      ],
       "settings": {
         "heading": "Codice"
       }
@@ -63,7 +77,9 @@
           }
         }
       },
-      "block_order": ["clark"],
+      "block_order": [
+        "clark"
+      ],
       "settings": {
         "heading": "Piece"
       }
@@ -93,5 +109,13 @@
       }
     }
   },
-  "order": ["hero", "manifesto", "values", "collections", "featured", "story", "newsletter"]
+  "order": [
+    "hero",
+    "manifesto",
+    "values",
+    "collections",
+    "featured",
+    "story",
+    "newsletter"
+  ]
 }
