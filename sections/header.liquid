@@ -5,7 +5,7 @@
 
   <div class="header-inner">
     <a class="brand brand-logo" href="{{ routes.root_url }}" aria-label="{{ shop.name }}">
-      <img src="{{ 'logo2-web.svg' | asset_url }}" alt="{{ section.settings.brand_name | default: shop.name }}" width="600" height="97">
+      <img src="{{ 'logo2-web.svg' | asset_url }}?v=2" alt="{{ section.settings.brand_name | default: shop.name }}" width="600" height="97">
     </a>
 
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="PrimaryNav">
@@ -78,9 +78,22 @@
 </header>
 
 <style>
+  .brand-logo {
+    display: flex;
+    align-items: center;
+    height: 74px;
+    overflow: visible;
+    line-height: 0;
+  }
+
   .brand-logo img {
-    width: min(220px, 46vw);
-    height: auto;
+    display: block;
+    width: min(220px, 46vw) !important;
+    height: auto !important;
+    max-height: 48px !important;
+    object-fit: contain;
+    object-position: center;
+    overflow: visible;
   }
 
   .header-actions,
@@ -109,7 +122,11 @@
   }
 
   @media (max-width: 900px) {
-    .brand-logo img { width: min(170px, 44vw); }
+    .brand-logo { height: 64px; }
+    .brand-logo img {
+      width: min(170px, 44vw) !important;
+      max-height: 40px !important;
+    }
     .localization-form { display: none; }
 
     .mobile-localization-form {
