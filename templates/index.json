@@ -50,25 +50,27 @@
       "blocks": {
         "clark": {
           "type": "collection",
-          "settings": { "label": "01", "collection": "clark", "title": "Clark", "link": "/collections/clark" }
+          "settings": {
+            "label": "01",
+            "collection": "clark",
+            "title": "Clark",
+            "link": "/collections/clark",
+            "image_ratio": "landscape"
+          }
         },
         "new_world": {
           "type": "collection",
-          "settings": { "label": "02", "collection": "new-world", "title": "New World", "link": "/collections/new-world" }
+          "settings": {
+            "label": "02",
+            "collection": "new-world",
+            "title": "New World",
+            "link": "/collections/new-world",
+            "image_ratio": "landscape"
+          }
         }
       },
       "block_order": ["clark", "new_world"],
       "settings": { "products_to_show": 4 }
-    },
-    "detail_image": {
-      "type": "editorial-image",
-      "settings": {
-        "ratio": "portrait",
-        "width": "constrained",
-        "alignment": "right",
-        "placeholder_label": "Dettaglio prodotto",
-        "caption": ""
-      }
     },
     "story": {
       "type": "rich-text",
@@ -87,5 +89,5 @@
       }
     }
   },
-  "order": ["hero", "manifesto", "campaign_image", "values", "collections", "detail_image", "story", "newsletter"]
+  "order": ["hero", "manifesto", "campaign_image", "values", "collections", "story", "newsletter"]
 }
