@@ -3,7 +3,10 @@
     {% if section.settings.kicker != blank %}<p class="eyebrow">{{ section.settings.kicker }}</p>{% endif %}
     <h2>{{ section.settings.heading }}</h2>
     {% if section.settings.text != blank %}<p>{{ section.settings.text }}</p>{% endif %}
-    {% if section.settings.principles != blank %}<p class="manifesto-principles">{{ section.settings.principles }}</p>{% endif %}
+    {% if section.settings.principles != blank %}
+      <span class="manifesto-divider" aria-hidden="true"></span>
+      <p class="manifesto-principles">{{ section.settings.principles }}</p>
+    {% endif %}
   </div>
 </section>
 
@@ -14,16 +17,24 @@
   }
 
   .manifesto-section--compact .manifesto-inner {
-    padding-top: clamp(40px, 5vw, 58px);
-    padding-bottom: clamp(40px, 5vw, 58px);
+    padding-top: clamp(50px, 5.5vw, 68px);
+    padding-bottom: clamp(50px, 5.5vw, 68px);
   }
 
   .manifesto-section--compact .manifesto-inner h2 {
     margin-bottom: 14px;
   }
 
+  .manifesto-divider {
+    display: block;
+    width: 44px;
+    height: 1px;
+    margin: 24px auto 0;
+    background: var(--color-text);
+  }
+
   .manifesto-section--compact .manifesto-principles {
-    margin: 22px auto 0;
+    margin: 18px auto 0;
     color: var(--color-text);
     font-size: clamp(13px, 1.4vw, 16px);
     font-weight: 700;
@@ -31,12 +42,16 @@
 
   @media (max-width: 620px) {
     .manifesto-section--compact .manifesto-inner {
-      padding-top: 34px;
-      padding-bottom: 34px;
+      padding-top: 44px;
+      padding-bottom: 44px;
+    }
+
+    .manifesto-divider {
+      margin-top: 20px;
     }
 
     .manifesto-section--compact .manifesto-principles {
-      margin-top: 18px;
+      margin-top: 16px;
     }
   }
 </style>
