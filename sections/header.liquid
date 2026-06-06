@@ -22,6 +22,28 @@
         <a href="/pages/about">{{ 'navigation.manifesto' | t }}</a>
         <a href="/pages/contact">{{ 'navigation.contact' | t }}</a>
       {% endfor %}
+
+      {% if localization.available_languages.size > 1 or localization.available_countries.size > 1 %}
+        {% form 'localization', id: 'MobileLocalization', class: 'mobile-localization-form' %}
+          {% if localization.available_languages.size > 1 %}
+            <label for="MobileLanguage">{{ 'localization.language' | t }}</label>
+            <select id="MobileLanguage" name="locale_code" onchange="this.form.submit()">
+              {% for language in localization.available_languages %}
+                <option value="{{ language.iso_code }}"{% if language.iso_code == localization.language.iso_code %} selected{% endif %}>{{ language.endonym_name | capitalize }}</option>
+              {% endfor %}
+            </select>
+          {% endif %}
+
+          {% if localization.available_countries.size > 1 %}
+            <label for="MobileCountry">{{ 'localization.country' | t }}</label>
+            <select id="MobileCountry" name="country_code" onchange="this.form.submit()">
+              {% for country in localization.available_countries %}
+                <option value="{{ country.iso_code }}"{% if country.iso_code == localization.country.iso_code %} selected{% endif %}>{{ country.name }} · {{ country.currency.iso_code }}</option>
+              {% endfor %}
+            </select>
+          {% endif %}
+        {% endform %}
+      {% endif %}
     </nav>
 
     <div class="header-actions">
@@ -64,9 +86,8 @@
     gap: 8px;
   }
 
-  .header-actions {
-    min-width: 0;
-  }
+  .header-actions { min-width: 0; }
+  .mobile-localization-form { display: none; }
 
   .localization-form select {
     width: auto;
@@ -83,8 +104,22 @@
   }
 
   @media (max-width: 900px) {
-    .localization-form {
-      display: none;
+    .localization-form { display: none; }
+
+    .mobile-localization-form {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 8px 12px;
+      align-items: center;
+      margin-top: 12px;
+      padding-top: 18px;
+      border-top: 1px solid var(--color-border);
+      font-size: 12px;
+      text-transform: none;
+    }
+
+    .mobile-localization-form select {
+      min-height: 40px;
     }
   }
 </style>
