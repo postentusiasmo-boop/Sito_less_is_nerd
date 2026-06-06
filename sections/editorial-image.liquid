@@ -1,0 +1,136 @@
+<section class="editorial-image-section editorial-image-section--{{ section.settings.width }} editorial-image-section--{{ section.settings.alignment }}">
+  <div class="editorial-image editorial-image--{{ section.settings.ratio }}">
+    {% if section.settings.image != blank %}
+      {{ section.settings.image | image_url: width: 2000 | image_tag: loading: 'lazy', sizes: '(min-width: 900px) 80vw, 100vw' }}
+    {% else %}
+      <div class="editorial-image-placeholder" aria-label="{{ section.settings.placeholder_label }}">
+        <span>{{ section.settings.placeholder_label }}</span>
+      </div>
+    {% endif %}
+  </div>
+
+  {% if section.settings.caption != blank %}
+    <p class="editorial-image-caption">{{ section.settings.caption }}</p>
+  {% endif %}
+</section>
+
+<style>
+  .editorial-image-section {
+    width: 100%;
+    margin: 0 auto;
+    padding: clamp(56px, 8vw, 112px) 24px;
+    background: #fff;
+  }
+
+  .editorial-image-section--full {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .editorial-image-section--constrained {
+    max-width: var(--max-width);
+  }
+
+  .editorial-image-section--left .editorial-image { margin-right: auto; }
+  .editorial-image-section--center .editorial-image { margin-left: auto; margin-right: auto; }
+  .editorial-image-section--right .editorial-image { margin-left: auto; }
+
+  .editorial-image {
+    width: 100%;
+    overflow: hidden;
+    background: #f4f4f1;
+  }
+
+  .editorial-image-section--constrained .editorial-image--portrait {
+    width: min(54%, 620px);
+  }
+
+  .editorial-image--landscape { aspect-ratio: 16 / 9; }
+  .editorial-image--portrait { aspect-ratio: 4 / 5; }
+  .editorial-image--square { aspect-ratio: 1; }
+
+  .editorial-image img,
+  .editorial-image-placeholder {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .editorial-image-placeholder {
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--color-border);
+    color: #777;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .editorial-image-caption {
+    max-width: 520px;
+    margin: 14px 0 0;
+    color: var(--color-muted);
+    font-size: 13px;
+  }
+
+  .editorial-image-section--center .editorial-image-caption {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .editorial-image-section--right .editorial-image-caption {
+    margin-left: auto;
+    text-align: right;
+  }
+
+  @media (max-width: 620px) {
+    .editorial-image-section { padding: 48px 16px; }
+    .editorial-image-section--full { padding-left: 0; padding-right: 0; }
+    .editorial-image-section--constrained .editorial-image--portrait { width: 82%; }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Editorial image",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Image" },
+    {
+      "type": "select",
+      "id": "ratio",
+      "label": "Formato",
+      "default": "landscape",
+      "options": [
+        { "value": "landscape", "label": "Orizzontale" },
+        { "value": "portrait", "label": "Verticale" },
+        { "value": "square", "label": "Quadrato" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "width",
+      "label": "Larghezza",
+      "default": "constrained",
+      "options": [
+        { "value": "full", "label": "Piena" },
+        { "value": "constrained", "label": "Contenuta" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "alignment",
+      "label": "Allineamento",
+      "default": "center",
+      "options": [
+        { "value": "left", "label": "Sinistra" },
+        { "value": "center", "label": "Centro" },
+        { "value": "right", "label": "Destra" }
+      ]
+    },
+    { "type": "text", "id": "placeholder_label", "label": "Testo placeholder", "default": "Immagine editoriale" },
+    { "type": "text", "id": "caption", "label": "Didascalia" }
+  ],
+  "presets": [{ "name": "Editorial image" }]
+}
+{% endschema %}
