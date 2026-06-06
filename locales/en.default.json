@@ -1,12 +1,36 @@
 {
   "general": {
-    "cart": "Carrello",
+    "cart": "Cart",
     "menu": "Menu",
-    "search": "Cerca"
+    "search": "Search",
+    "primary_navigation": "Primary navigation",
+    "powered_by_shopify": "Powered by Shopify"
+  },
+  "navigation": {
+    "shop": "Shop",
+    "collections": "Collections",
+    "manifesto": "Manifesto",
+    "contact": "Contact",
+    "shipping": "Shipping",
+    "returns": "Returns"
+  },
+  "localization": {
+    "language": "Language",
+    "country": "Country and currency"
+  },
+  "collections": {
+    "piece": "Piece",
+    "empty": "Products for this piece are coming soon."
+  },
+  "newsletter": {
+    "email": "Email",
+    "placeholder": "email@example.com",
+    "submit": "Subscribe",
+    "success": "Thank you. You are now subscribed."
   },
   "products": {
-    "add_to_cart": "Aggiungi al carrello",
-    "sold_out": "Esaurito",
-    "sale": "In offerta"
+    "add_to_cart": "Add to cart",
+    "sold_out": "Sold out",
+    "sale": "Sale"
   }
 }
