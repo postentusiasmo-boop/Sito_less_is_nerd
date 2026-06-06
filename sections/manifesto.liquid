@@ -1,20 +1,41 @@
-<section class="manifesto-section">
+<section class="manifesto-section manifesto-section--compact">
   <div class="manifesto-inner">
     {% if section.settings.kicker != blank %}<p class="eyebrow">{{ section.settings.kicker }}</p>{% endif %}
     <h2>{{ section.settings.heading }}</h2>
-    <p>{{ section.settings.text }}</p>
-    {% if section.settings.note != blank %}<span class="manifesto-note">{{ section.settings.note }}</span>{% endif %}
+    {% if section.settings.text != blank %}<p>{{ section.settings.text }}</p>{% endif %}
   </div>
 </section>
+
+<style>
+  .manifesto-section--compact {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .manifesto-section--compact .manifesto-inner {
+    padding-top: clamp(58px, 7vw, 82px);
+    padding-bottom: clamp(58px, 7vw, 82px);
+  }
+
+  .manifesto-section--compact .manifesto-inner h2 {
+    margin-bottom: 18px;
+  }
+
+  @media (max-width: 620px) {
+    .manifesto-section--compact .manifesto-inner {
+      padding-top: 48px;
+      padding-bottom: 48px;
+    }
+  }
+</style>
 
 {% schema %}
 {
   "name": "Manifesto",
   "settings": [
     { "type": "text", "id": "kicker", "label": "Kicker", "default": "Manifesto" },
-    { "type": "text", "id": "heading", "label": "Heading", "default": "Non urlare. Fatti riconoscere." },
-    { "type": "textarea", "id": "text", "label": "Text", "default": "Un segno, una memoria, un codice privato. Se lo sai, basta." },
-    { "type": "text", "id": "note", "label": "Note", "default": "Non gadget. Segnali." }
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Orgogliosi di essere nerd." },
+    { "type": "textarea", "id": "text", "label": "Text", "default": "Con stile. Senza rumore." }
   ],
   "presets": [{ "name": "Manifesto" }]
 }
