@@ -1,0 +1,64 @@
+<section class="brand-code-section">
+  {% if section.settings.heading != blank %}
+    <p class="brand-code-kicker">{{ section.settings.heading }}</p>
+  {% endif %}
+
+  <p class="brand-code-line">
+    <span>{{ section.settings.first }}</span><span aria-hidden="true">.</span>
+    <span>{{ section.settings.second }}</span><span aria-hidden="true">.</span>
+    <span>{{ section.settings.third }}</span>
+  </p>
+</section>
+
+<style>
+  .brand-code-section {
+    width: min(var(--max-width), calc(100% - 48px));
+    margin: 0 auto;
+    padding: clamp(52px, 7vw, 78px) 0;
+    background: #fff;
+  }
+
+  .brand-code-kicker {
+    margin: 0 0 15px;
+    color: var(--color-muted);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .brand-code-line {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 .18em;
+    margin: 0;
+    color: var(--color-text);
+    font-size: clamp(40px, 7vw, 82px);
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  @media (max-width: 620px) {
+    .brand-code-section {
+      width: calc(100% - 32px);
+      padding: 44px 0 50px;
+    }
+
+    .brand-code-line {
+      font-size: clamp(35px, 11vw, 52px);
+      line-height: 1.06;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Brand code",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Titolo", "default": "Codice" },
+    { "type": "text", "id": "first", "label": "Prima parola", "default": "Semplice" },
+    { "type": "text", "id": "second", "label": "Seconda parola", "default": "Iconico" },
+    { "type": "text", "id": "third", "label": "Terza parola", "default": "Profondo" }
+  ],
+  "presets": [{ "name": "Brand code" }]
+}
+{% endschema %}
