@@ -25,16 +25,6 @@
         "text": "Con stile. Senza rumore."
       }
     },
-    "campaign_image": {
-      "type": "editorial-image",
-      "settings": {
-        "ratio": "landscape",
-        "width": "full",
-        "alignment": "center",
-        "placeholder_label": "Immagine campagna",
-        "caption": ""
-      }
-    },
     "values": {
       "type": "minimal-values",
       "blocks": {
@@ -89,5 +79,5 @@
       }
     }
   },
-  "order": ["hero", "manifesto", "campaign_image", "values", "collections", "story", "newsletter"]
+  "order": ["hero", "manifesto", "values", "collections", "story", "newsletter"]
 }
