@@ -25,15 +25,14 @@
         "text": "Con stile. Senza rumore."
       }
     },
-    "values": {
-      "type": "minimal-values",
-      "blocks": {
-        "one": { "type": "value", "settings": { "label": "01", "heading": "Semplice", "text": "" } },
-        "two": { "type": "value", "settings": { "label": "02", "heading": "Iconico", "text": "" } },
-        "three": { "type": "value", "settings": { "label": "03", "heading": "Profondo", "text": "" } }
-      },
-      "block_order": ["one", "two", "three"],
-      "settings": { "heading": "Codice" }
+    "brand_code": {
+      "type": "brand-code",
+      "settings": {
+        "heading": "Codice",
+        "first": "Semplice",
+        "second": "Iconico",
+        "third": "Profondo"
+      }
     },
     "collections": {
       "type": "collection-list",
@@ -79,5 +78,5 @@
       }
     }
   },
-  "order": ["hero", "manifesto", "values", "collections", "story", "newsletter"]
+  "order": ["hero", "manifesto", "brand_code", "collections", "story", "newsletter"]
 }
