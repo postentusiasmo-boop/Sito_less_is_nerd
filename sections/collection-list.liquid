@@ -1,14 +1,28 @@
-<section class="collection-line-section">
-  {% for block in section.blocks limit: 1 %}
+<section class="pieces-section">
+  {% for block in section.blocks %}
     {% assign collection = block.settings.collection %}
     {% assign title = block.settings.title | default: collection.title %}
-    {% assign url = block.settings.link | default: collection.url %}
+    {% assign url = block.settings.link | default: collection.url | default: routes.all_products_collection_url %}
 
-    <a class="collection-line" href="{{ url | default: routes.all_products_collection_url }}" {{ block.shopify_attributes }}>
-      <span>Piece {{ block.settings.label }}</span>
-      <span class="collection-line-separator">_</span>
-      <strong>{{ title }}</strong>
-    </a>
+    <div class="piece-group" {{ block.shopify_attributes }}>
+      <a class="collection-line" href="{{ url }}">
+        <span>{{ 'collections.piece' | t }} {{ block.settings.label }}</span>
+        <span class="collection-line-separator">_</span>
+        <strong>{{ title }}</strong>
+      </a>
+
+      <div class="section piece-products">
+        <div class="product-grid">
+          {% for product in collection.products limit: section.settings.products_to_show %}
+            {% render 'product-card', product: product %}
+          {% else %}
+            <div class="piece-empty">
+              <p>{{ 'collections.empty' | t }}</p>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
   {% endfor %}
 </section>
 
@@ -16,7 +30,7 @@
 {
   "name": "Pieces",
   "settings": [
-    { "type": "text", "id": "heading", "label": "Titolo", "default": "Piece" }
+    { "type": "range", "id": "products_to_show", "label": "Products per piece", "min": 2, "max": 8, "step": 1, "default": 4 }
   ],
   "blocks": [
     {
@@ -26,7 +40,6 @@
         { "type": "text", "id": "label", "label": "Numero", "default": "01" },
         { "type": "collection", "id": "collection", "label": "Collezione Shopify" },
         { "type": "text", "id": "title", "label": "Titolo manuale", "default": "Clark" },
-        { "type": "textarea", "id": "text", "label": "Testo", "default": "Identità quotidiane. Segni quasi invisibili." },
         { "type": "url", "id": "link", "label": "Link manuale" }
       ]
     }
@@ -35,14 +48,8 @@
     {
       "name": "Pieces",
       "blocks": [
-        {
-          "type": "collection",
-          "settings": {
-            "label": "01",
-            "title": "Clark",
-            "link": "/collections/clark"
-          }
-        }
+        { "type": "collection", "settings": { "label": "01", "title": "Clark", "link": "/collections/clark" } },
+        { "type": "collection", "settings": { "label": "02", "title": "New World", "link": "/collections/new-world" } }
       ]
     }
   ]
