@@ -1,7 +1,13 @@
 <footer class="site-footer">
   <div class="footer-grid">
     <div>
-      <img class="footer-logo" src="{{ 'logo2-vector.svg' | asset_url }}" alt="{{ section.settings.brand_name }}" width="616" height="109">
+      <div class="footer-logo" style="--logo-width: {{ settings.logo_width | default: 220 }}px">
+        {% if settings.logo != blank %}
+          {{ settings.logo | image_url: width: 1200 | image_tag: class: 'site-logo-image', widths: '180, 240, 360, 480, 720, 960, 1200', alt: shop.name }}
+        {% else %}
+          <img class="site-logo-image" src="{{ 'logo-default.png' | asset_url }}" alt="{{ shop.name }}" width="600" height="97">
+        {% endif %}
+      </div>
       <p>{{ section.settings.text }}</p>
     </div>
 
@@ -25,11 +31,17 @@
 
 <style>
   .site-footer .footer-logo {
-    display: block;
-    width: min(220px, 64vw) !important;
-    height: auto !important;
-    max-height: none !important;
+    width: min(var(--logo-width), 64vw);
     margin-bottom: 18px;
+    line-height: 0;
+  }
+
+  .site-footer .site-logo-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: left center;
   }
 </style>
 
