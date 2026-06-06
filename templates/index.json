@@ -21,76 +21,35 @@
       "type": "manifesto",
       "settings": {
         "kicker": "Manifesto",
-        "heading": "Tutto il resto può sparire.",
-        "text": "Resta il riferimento. Resta la forma.",
-        "note": "Il superfluo fuori campo."
+        "heading": "Orgogliosi di essere nerd.",
+        "text": "Senza bisogno di dimostrarlo.",
+        "note": "Less is nerd."
       }
     },
     "values": {
       "type": "minimal-values",
       "blocks": {
-        "one": {
-          "type": "value",
-          "settings": {
-            "label": "01",
-            "heading": "Sottile",
-            "text": "Il riferimento c'è, ma non deve spiegarsi."
-          }
-        },
-        "two": {
-          "type": "value",
-          "settings": {
-            "label": "02",
-            "heading": "Pulito",
-            "text": "Prima viene la forma. Poi il codice."
-          }
-        },
-        "three": {
-          "type": "value",
-          "settings": {
-            "label": "03",
-            "heading": "Portabile",
-            "text": "Nerd senza costume. Elegante senza posa."
-          }
-        }
+        "one": { "type": "value", "settings": { "label": "01", "heading": "Semplice", "text": "" } },
+        "two": { "type": "value", "settings": { "label": "02", "heading": "Iconico", "text": "" } },
+        "three": { "type": "value", "settings": { "label": "03", "heading": "Profondo", "text": "" } }
       },
-      "block_order": [
-        "one",
-        "two",
-        "three"
-      ],
-      "settings": {
-        "heading": "Codice"
-      }
+      "block_order": ["one", "two", "three"],
+      "settings": { "heading": "Codice" }
     },
     "collections": {
       "type": "collection-list",
       "blocks": {
         "clark": {
           "type": "collection",
-          "settings": {
-            "label": "01",
-            "collection": "clark",
-            "title": "Clark",
-            "text": "Identità quotidiane. Segni quasi invisibili.",
-            "link": "/collections/clark"
-          }
+          "settings": { "label": "01", "collection": "clark", "title": "Clark", "link": "/collections/clark" }
+        },
+        "new_world": {
+          "type": "collection",
+          "settings": { "label": "02", "collection": "new-world", "title": "New World", "link": "/collections/new-world" }
         }
       },
-      "block_order": [
-        "clark"
-      ],
-      "settings": {
-        "heading": "Piece"
-      }
-    },
-    "featured": {
-      "type": "featured-products",
-      "settings": {
-        "heading": "",
-        "collection": "clark",
-        "products_to_show": 8
-      }
+      "block_order": ["clark", "new_world"],
+      "settings": { "products_to_show": 4 }
     },
     "story": {
       "type": "rich-text",
@@ -109,13 +68,5 @@
       }
     }
   },
-  "order": [
-    "hero",
-    "manifesto",
-    "values",
-    "collections",
-    "featured",
-    "story",
-    "newsletter"
-  ]
+  "order": ["hero", "manifesto", "values", "collections", "story", "newsletter"]
 }
