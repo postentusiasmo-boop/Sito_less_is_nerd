@@ -3,6 +3,7 @@
     {% if section.settings.kicker != blank %}<p class="eyebrow">{{ section.settings.kicker }}</p>{% endif %}
     <h2>{{ section.settings.heading }}</h2>
     {% if section.settings.text != blank %}<p>{{ section.settings.text }}</p>{% endif %}
+    {% if section.settings.principles != blank %}<p class="manifesto-principles">{{ section.settings.principles }}</p>{% endif %}
   </div>
 </section>
 
@@ -21,10 +22,21 @@
     margin-bottom: 14px;
   }
 
+  .manifesto-section--compact .manifesto-principles {
+    margin: 22px auto 0;
+    color: var(--color-text);
+    font-size: clamp(13px, 1.4vw, 16px);
+    font-weight: 700;
+  }
+
   @media (max-width: 620px) {
     .manifesto-section--compact .manifesto-inner {
       padding-top: 34px;
       padding-bottom: 34px;
+    }
+
+    .manifesto-section--compact .manifesto-principles {
+      margin-top: 18px;
     }
   }
 </style>
@@ -35,7 +47,8 @@
   "settings": [
     { "type": "text", "id": "kicker", "label": "Kicker", "default": "Manifesto" },
     { "type": "text", "id": "heading", "label": "Heading", "default": "Orgogliosi di essere nerd." },
-    { "type": "textarea", "id": "text", "label": "Text", "default": "Con stile. Senza rumore." }
+    { "type": "textarea", "id": "text", "label": "Text", "default": "Con stile. Senza rumore." },
+    { "type": "text", "id": "principles", "label": "Principi", "default": "Semplice _ Iconico _ Profondo" }
   ],
   "presets": [{ "name": "Manifesto" }]
 }
