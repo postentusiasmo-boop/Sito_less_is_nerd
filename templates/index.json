@@ -26,6 +26,16 @@
         "note": "Less is nerd."
       }
     },
+    "campaign_image": {
+      "type": "editorial-image",
+      "settings": {
+        "ratio": "landscape",
+        "width": "full",
+        "alignment": "center",
+        "placeholder_label": "Immagine campagna",
+        "caption": ""
+      }
+    },
     "values": {
       "type": "minimal-values",
       "blocks": {
@@ -51,6 +61,16 @@
       "block_order": ["clark", "new_world"],
       "settings": { "products_to_show": 4 }
     },
+    "detail_image": {
+      "type": "editorial-image",
+      "settings": {
+        "ratio": "portrait",
+        "width": "constrained",
+        "alignment": "right",
+        "placeholder_label": "Dettaglio prodotto",
+        "caption": ""
+      }
+    },
     "story": {
       "type": "rich-text",
       "settings": {
@@ -68,5 +88,5 @@
       }
     }
   },
-  "order": ["hero", "manifesto", "values", "collections", "story", "newsletter"]
+  "order": ["hero", "manifesto", "campaign_image", "values", "collections", "detail_image", "story", "newsletter"]
 }
