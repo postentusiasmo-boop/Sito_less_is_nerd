@@ -9,27 +9,49 @@
     </a>
 
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="PrimaryNav">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
       <span class="visually-hidden">{{ 'general.menu' | t }}</span>
     </button>
 
-    <nav id="PrimaryNav" class="primary-nav" aria-label="Principale">
+    <nav id="PrimaryNav" class="primary-nav" aria-label="{{ 'general.primary_navigation' | t }}">
       {% for link in linklists.main-menu.links %}
         <a href="{{ link.url }}">{{ link.title }}</a>
       {% else %}
-        <a href="{{ routes.all_products_collection_url }}">Negozio</a>
-        <a href="/collections">Collezioni</a>
-        <a href="/pages/about">Manifesto</a>
-        <a href="/pages/contact">Contatti</a>
+        <a href="{{ routes.all_products_collection_url }}">{{ 'navigation.shop' | t }}</a>
+        <a href="/collections">{{ 'navigation.collections' | t }}</a>
+        <a href="/pages/about">{{ 'navigation.manifesto' | t }}</a>
+        <a href="/pages/contact">{{ 'navigation.contact' | t }}</a>
       {% endfor %}
     </nav>
 
-    <a class="cart-link" href="{{ routes.cart_url }}">
-      {{ 'general.cart' | t }}
-      <span class="cart-count">{{ cart.item_count }}</span>
-    </a>
+    <div class="header-actions">
+      {% if localization.available_languages.size > 1 or localization.available_countries.size > 1 %}
+        {% form 'localization', id: 'HeaderLocalization', class: 'localization-form' %}
+          {% if localization.available_languages.size > 1 %}
+            <label class="visually-hidden" for="HeaderLanguage">{{ 'localization.language' | t }}</label>
+            <select id="HeaderLanguage" name="locale_code" onchange="this.form.submit()">
+              {% for language in localization.available_languages %}
+                <option value="{{ language.iso_code }}"{% if language.iso_code == localization.language.iso_code %} selected{% endif %}>{{ language.endonym_name | capitalize }}</option>
+              {% endfor %}
+            </select>
+          {% endif %}
+
+          {% if localization.available_countries.size > 1 %}
+            <label class="visually-hidden" for="HeaderCountry">{{ 'localization.country' | t }}</label>
+            <select id="HeaderCountry" name="country_code" onchange="this.form.submit()">
+              {% for country in localization.available_countries %}
+                <option value="{{ country.iso_code }}"{% if country.iso_code == localization.country.iso_code %} selected{% endif %}>{{ country.name }} · {{ country.currency.iso_code }}</option>
+              {% endfor %}
+            </select>
+          {% endif %}
+        {% endform %}
+      {% endif %}
+
+      <a class="cart-link" href="{{ routes.cart_url }}">
+        {{ 'general.cart' | t }}
+        <span class="cart-count">{{ cart.item_count }}</span>
+      </a>
+    </div>
   </div>
 </header>
 
@@ -37,12 +59,7 @@
 {
   "name": "Header",
   "settings": [
-    {
-      "type": "text",
-      "id": "brand_name",
-      "label": "Brand name",
-      "default": "Less is nerd"
-    }
+    { "type": "text", "id": "brand_name", "label": "Brand name", "default": "Less is nerd" }
   ]
 }
 {% endschema %}
