@@ -1,0 +1,31 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "current": {
+    "logo": "shopify://shop_images/logo2_4x_433d8fa2-d407-47e9-8dfe-106200f9985f.png",
+    "logo_width": 200,
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "brand_name": "Less is nerd"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "brand_name": "Less is nerd",
+          "text": "Oggetti puliti, riferimenti precisi, nessun effetto speciale."
+        }
+      }
+    },
+    "content_for_index": []
+  }
+}
