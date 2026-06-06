@@ -1,20 +1,51 @@
-<section class="values-section">
+<section class="values-section values-section--compact">
   {% if section.settings.heading != blank %}
-    <div class="section-heading">
-      <h2>{{ section.settings.heading }}</h2>
-    </div>
+    <p class="values-kicker">{{ section.settings.heading }}</p>
   {% endif %}
 
-  <div class="values-grid">
+  <div class="values-line" aria-label="{{ section.settings.heading }}">
     {% for block in section.blocks %}
-      <article class="value-card" {{ block.shopify_attributes }}>
-        <span>{{ block.settings.label }}</span>
-        <h3>{{ block.settings.heading }}</h3>
-        {% if block.settings.text != blank %}<p>{{ block.settings.text }}</p>{% endif %}
-      </article>
+      <span {{ block.shopify_attributes }}>{{ block.settings.heading }}{% unless forloop.last %}.{% endunless %}</span>
     {% endfor %}
   </div>
 </section>
+
+<style>
+  .values-section--compact {
+    padding-top: clamp(54px, 7vw, 82px);
+    padding-bottom: clamp(54px, 7vw, 82px);
+  }
+
+  .values-kicker {
+    margin: 0 0 16px;
+    color: var(--color-muted);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .values-line {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0 .22em;
+    font-size: clamp(40px, 7vw, 82px);
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  @media (max-width: 620px) {
+    .values-section--compact {
+      padding-top: 46px;
+      padding-bottom: 52px;
+    }
+
+    .values-line {
+      font-size: clamp(36px, 11.5vw, 54px);
+      line-height: 1.05;
+    }
+  }
+</style>
 
 {% schema %}
 {
@@ -37,9 +68,9 @@
     {
       "name": "Minimal values",
       "blocks": [
-        { "type": "value", "settings": { "label": "01", "heading": "Semplice" } },
-        { "type": "value", "settings": { "label": "02", "heading": "Iconico" } },
-        { "type": "value", "settings": { "label": "03", "heading": "Profondo" } }
+        { "type": "value", "settings": { "heading": "Semplice" } },
+        { "type": "value", "settings": { "heading": "Iconico" } },
+        { "type": "value", "settings": { "heading": "Profondo" } }
       ]
     }
   ]
