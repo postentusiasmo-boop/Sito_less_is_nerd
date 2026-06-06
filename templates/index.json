@@ -22,16 +22,8 @@
       "settings": {
         "kicker": "Manifesto",
         "heading": "Orgogliosi di essere nerd.",
-        "text": "Con stile. Senza rumore."
-      }
-    },
-    "brand_code": {
-      "type": "brand-code",
-      "settings": {
-        "heading": "Codice",
-        "first": "Semplice",
-        "second": "Iconico",
-        "third": "Profondo"
+        "text": "Con stile. Senza rumore.",
+        "principles": "Semplice _ Iconico _ Profondo"
       }
     },
     "collections": {
@@ -78,5 +70,5 @@
       }
     }
   },
-  "order": ["hero", "manifesto", "brand_code", "collections", "story", "newsletter"]
+  "order": ["hero", "manifesto", "collections", "story", "newsletter"]
 }
