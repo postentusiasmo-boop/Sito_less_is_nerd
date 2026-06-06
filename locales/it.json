@@ -1,1 +1,36 @@
-{"general":{"cart":"Carrello","menu":"Menu","search":"Cerca"},"products":{"add_to_cart":"Aggiungi al carrello","sold_out":"Esaurito","sale":"In offerta"}}
+{
+  "general": {
+    "cart": "Carrello",
+    "menu": "Menu",
+    "search": "Cerca",
+    "primary_navigation": "Navigazione principale",
+    "powered_by_shopify": "Creato con Shopify"
+  },
+  "navigation": {
+    "shop": "Negozio",
+    "collections": "Collezioni",
+    "manifesto": "Manifesto",
+    "contact": "Contatti",
+    "shipping": "Spedizioni",
+    "returns": "Resi"
+  },
+  "localization": {
+    "language": "Lingua",
+    "country": "Paese e valuta"
+  },
+  "collections": {
+    "piece": "Piece",
+    "empty": "I prodotti di questa piece arriveranno presto."
+  },
+  "newsletter": {
+    "email": "Email",
+    "placeholder": "email@esempio.com",
+    "submit": "Ricevi",
+    "success": "Grazie, iscrizione ricevuta."
+  },
+  "products": {
+    "add_to_cart": "Aggiungi al carrello",
+    "sold_out": "Esaurito",
+    "sale": "In offerta"
+  }
+}
