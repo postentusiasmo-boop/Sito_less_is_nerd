@@ -6,11 +6,11 @@
 
   {% form 'customer', class: 'newsletter-form' %}
     <input type="hidden" name="contact[tags]" value="newsletter">
-    <label class="visually-hidden" for="NewsletterEmail">Email</label>
-    <input id="NewsletterEmail" type="email" name="contact[email]" placeholder="email@example.com" required>
-    <button class="button" type="submit">Ricevi</button>
+    <label class="visually-hidden" for="NewsletterEmail">{{ 'newsletter.email' | t }}</label>
+    <input id="NewsletterEmail" type="email" name="contact[email]" placeholder="{{ 'newsletter.placeholder' | t }}" required>
+    <button class="button" type="submit">{{ 'newsletter.submit' | t }}</button>
     {% if form.posted_successfully? %}
-      <p class="form-message">Grazie, iscrizione ricevuta.</p>
+      <p class="form-message">{{ 'newsletter.success' | t }}</p>
     {% endif %}
     {% if form.errors %}
       <p class="form-message">{{ form.errors | default_errors }}</p>
