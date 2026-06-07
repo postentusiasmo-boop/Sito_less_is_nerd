@@ -11,6 +11,7 @@
   "current": {
     "logo": "shopify://shop_images/logo2_4x_433d8fa2-d407-47e9-8dfe-106200f9985f.png",
     "logo_width": 200,
+    "announcement": "Essential objects. Precise references.",
     "sections": {
       "header": {
         "type": "header",
@@ -22,7 +23,7 @@
         "type": "footer",
         "settings": {
           "brand_name": "Less is nerd",
-          "text": "Oggetti puliti, riferimenti precisi, nessun effetto speciale."
+          "text": "Clean objects. Precise references. No special effects."
         }
       }
     },
