@@ -18,12 +18,12 @@
         "max": 320,
         "step": 10,
         "unit": "px",
-        "label": "Larghezza logo",
+        "label": "Logo width",
         "default": 220
       },
       {
         "type": "header",
-        "content": "Colori"
+        "content": "Colors"
       },
       {
         "type": "color",
@@ -53,7 +53,7 @@
         "type": "text",
         "id": "announcement",
         "label": "Announcement",
-        "default": "Oggetti essenziali. Riferimenti precisi."
+        "default": "Essential objects. Precise references."
       }
     ]
   }
