@@ -13,7 +13,15 @@
 
     <nav aria-label="Footer">
       {% for link in linklists.footer.links %}
-        <a href="{{ link.url }}">{{ link.title }}</a>
+        {% assign link_title = link.title %}
+        {% case link.title %}
+          {% when 'Catalogo' or 'CATALOGO' %}{% assign link_title = 'Shop' %}
+          {% when 'Collezioni' or 'COLLEZIONI' %}{% assign link_title = 'Collections' %}
+          {% when 'Contatti' or 'CONTATTI' %}{% assign link_title = 'Contact' %}
+          {% when 'Spedizioni' or 'SPEDIZIONI' %}{% assign link_title = 'Shipping' %}
+          {% when 'Resi' or 'RESI' %}{% assign link_title = 'Returns' %}
+        {% endcase %}
+        <a href="{{ link.url }}">{{ link_title }}</a>
       {% else %}
         <a href="{{ routes.all_products_collection_url }}">{{ 'navigation.shop' | t }}</a>
         <a href="/collections">{{ 'navigation.collections' | t }}</a>
