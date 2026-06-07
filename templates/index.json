@@ -13,17 +13,17 @@
       "type": "hero",
       "settings": {
         "image": "shopify://shop_images/less-is-nerd-hero-beach-preview-v2.webp",
-        "heading": "Siamo ciò che conosciamo.",
-        "text": "Oggetti essenziali per chi si ritrova nei dettagli."
+        "heading": "We are what we know.",
+        "text": "Made for those who notice the details."
       }
     },
     "manifesto": {
       "type": "manifesto",
       "settings": {
         "kicker": "Manifesto",
-        "heading": "Orgogliosi di essere nerd.",
-        "text": "Con stile. Senza rumore.",
-        "principles": "Semplice _ Iconico _ Profondo"
+        "heading": "Proudly nerd.",
+        "text": "With style. Without the noise.",
+        "principles": "Clean _ Iconic _ Meaningful"
       }
     },
     "collections": {
@@ -56,8 +56,8 @@
     "story": {
       "type": "rich-text",
       "settings": {
-        "heading": "Si nota solo da vicino.",
-        "text": "Da lontano, pulito. Da vicino, tuo.",
+        "heading": "It reveals itself up close.",
+        "text": "Quiet from afar. Personal up close.",
         "button_label": "",
         "button_link": "shopify://pages/contact"
       }
@@ -65,8 +65,8 @@
     "newsletter": {
       "type": "newsletter",
       "settings": {
-        "heading": "Frequenza privata",
-        "text": "Nuovi oggetti, poche parole, solo quando serve."
+        "heading": "Private frequency",
+        "text": "New pieces. Few words. Only when it matters."
       }
     }
   },
