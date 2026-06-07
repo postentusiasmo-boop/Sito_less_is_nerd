@@ -1,5 +1,5 @@
 <section class="cart-page">
-  <h1>Carrello</h1>
+  <h1>Cart</h1>
 
   {% if cart.item_count > 0 %}
     <form action="{{ routes.cart_url }}" method="post" novalidate>
@@ -13,7 +13,7 @@
               <h2>{{ item.product.title }}</h2>
               <p>{{ item.variant.title }}</p>
               <p>{{ item.final_line_price | money }}</p>
-              <label for="updates_{{ item.key }}">Quantita</label>
+              <label for="updates_{{ item.key }}">Quantity</label>
               <input id="updates_{{ item.key }}" type="number" name="updates[]" value="{{ item.quantity }}" min="0">
             </div>
           </div>
@@ -21,20 +21,20 @@
       </div>
 
       <div class="cart-summary">
-        <p>Totale: <strong>{{ cart.total_price | money }}</strong></p>
-        <button class="button" type="submit" name="update">Aggiorna</button>
-        <button class="button" type="submit" name="checkout">Vai al pagamento</button>
+        <p>Total: <strong>{{ cart.total_price | money }}</strong></p>
+        <button class="button" type="submit" name="update">Update cart</button>
+        <button class="button" type="submit" name="checkout">Checkout</button>
       </div>
     </form>
   {% else %}
-    <p>Il carrello e vuoto.</p>
-    <a class="button" href="{{ routes.all_products_collection_url }}">Vai al negozio</a>
+    <p>Your cart is empty.</p>
+    <a class="button" href="{{ routes.all_products_collection_url }}">Explore the shop</a>
   {% endif %}
 </section>
 
 {% schema %}
 {
-  "name": "Carrello",
+  "name": "Cart",
   "settings": []
 }
 {% endschema %}
