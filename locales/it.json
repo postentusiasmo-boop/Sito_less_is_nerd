@@ -9,37 +9,37 @@
  */
 {
   "general": {
-    "cart": "Carrello",
+    "cart": "Cart",
     "menu": "Menu",
-    "search": "Cerca",
-    "primary_navigation": "Navigazione principale",
-    "powered_by_shopify": "Creato con Shopify"
+    "search": "Search",
+    "primary_navigation": "Primary navigation",
+    "powered_by_shopify": "Powered by Shopify"
   },
   "navigation": {
-    "shop": "Negozio",
-    "collections": "Collezioni",
+    "shop": "Shop",
+    "collections": "Collections",
     "manifesto": "Manifesto",
-    "contact": "Contatti",
-    "shipping": "Spedizioni",
-    "returns": "Resi"
+    "contact": "Contact",
+    "shipping": "Shipping",
+    "returns": "Returns"
   },
   "localization": {
-    "language": "Lingua",
-    "country": "Paese e valuta"
+    "language": "Language",
+    "country": "Country and currency"
   },
   "collections": {
     "piece": "Piece",
-    "empty": "I prodotti di questa piece arriveranno presto."
+    "empty": "Products for this piece are coming soon."
   },
   "newsletter": {
     "email": "Email",
-    "placeholder": "email@esempio.com",
-    "submit": "Ricevi",
-    "success": "Grazie, iscrizione ricevuta."
+    "placeholder": "email@example.com",
+    "submit": "Subscribe",
+    "success": "Thank you. You are now subscribed."
   },
   "products": {
-    "add_to_cart": "Aggiungi al carrello",
-    "sold_out": "Esaurito",
-    "sale": "In offerta"
+    "add_to_cart": "Add to cart",
+    "sold_out": "Sold out",
+    "sale": "Sale"
   }
 }
