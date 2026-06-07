@@ -11,12 +11,12 @@
       {% for product in collection.products %}
         {% render 'product-card', product: product %}
       {% else %}
-        <p>Questa collezione non contiene ancora prodotti.</p>
+        <p>This piece has no products yet.</p>
       {% endfor %}
     </div>
 
     {% if paginate.pages > 1 %}
-      <nav class="pagination" aria-label="Paginazione">
+      <nav class="pagination" aria-label="Pagination">
         {{ paginate | default_pagination }}
       </nav>
     {% endif %}
